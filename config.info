@@ -1,0 +1,44 @@
+width = 1024
+height = 768
+
+windowed = true
+
+vertical_sync = true
+verbose = true
+print_fps = true
+display_log_file = false
+enable_dds_load = true
+use_pack_loader = false
+do_profile = false
+use_saves_dir = true
+
+if editor_mode:
+    width = 1024
+    height = 768
+    x = 1280-width
+    windowed = true
+    vertical_sync = true
+    enable_dds_load = false
+
+#use_startup_location = True
+
+unitest_enable = false
+unitest_commands = \
+[
+    ('condition', 'engine.fading.is_transparent', 1),
+    ('wait', 3),
+    ('click', 128, 700),
+    ('condition', 'engine.fading.is_opaque', 1),
+    ('condition', 'engine.video.is_playing', 1),
+    ('keypress'),
+    ('condition', 'engine.fading.is_transparent', 1),
+    ('keypress'),
+    ('condition', 'engine.fading.is_opaque', 1),
+    ('condition', 'engine.fading.is_transparent', 1),
+    ('keypress'),
+    ('condition', 'engine.fading.is_opaque', 1),
+    ('condition', 'engine.fading.is_transparent', 1),
+    ('keypress'),
+    ('goto', -6),
+    ('exit')
+]

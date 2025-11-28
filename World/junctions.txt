@@ -1,0 +1,14 @@
+# This file is generated automatically.
+# Please don't edit it by hand because your
+# changes will be rewritten by editor.
+
+# short project name
+project = 'Please enter project name'
+
+# startup location
+startup_location = ''
+
+# junctions table
+locations = [
+    
+]
