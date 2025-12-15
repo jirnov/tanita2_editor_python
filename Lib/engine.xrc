@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="cp1251"?>
+<resource>
+  <object class="wxDialog" name="TRACEBACK_DLG">
+    <title>Python exception traceback</title>
+    <centered>1</centered>
+    <style>wxDEFAULT_DIALOG_STYLE|wxTHICK_FRAME|wxDIALOG_MODAL</style>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxTextCtrl" name="TRACEBACK_TEXT">
+          <size>450,400</size>
+          <style>wxTE_AUTO_SCROLL|wxTE_MULTILINE|wxTE_READONLY|wxTE_DONTWRAP</style>
+          <font>
+            <size>10</size>
+            <family>swiss</family>
+            <style>normal</style>
+            <weight>normal</weight>
+            <underlined>0</underlined>
+            <face>Courier New</face>
+            <encoding>WINDOWS-1251</encoding>
+          </font>
+        </object>
+        <option>1</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxButton" name="IGNORE_BTN">
+              <label>Ignore</label>
+              <default>0</default>
+            </object>
+            <option>1</option>
+            <flag>wxLEFT|wxEXPAND</flag>
+            <border>5</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="BREAK_BTN">
+              <label>Break</label>
+              <default>0</default>
+            </object>
+            <option>1</option>
+            <flag>wxRIGHT|wxEXPAND</flag>
+            <border>5</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="RETRY_BTN">
+              <label>Retry</label>
+              <default>1</default>
+              <fg>#800000</fg>
+              <focused>1</focused>
+            </object>
+            <option>1</option>
+            <flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+            <border>5</border>
+          </object>
+        </object>
+        <flag>wxBOTTOM|wxEXPAND</flag>
+        <border>2</border>
+      </object>
+    </object>
+  </object>
+</resource>

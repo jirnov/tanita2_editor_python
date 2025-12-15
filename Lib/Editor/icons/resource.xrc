@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="cp1251"?>
+<resource>
+  <object class="wxDialog" name="EXPORT_DLG">
+    <title>Errors detected. Export canceled.</title>
+    <centered>1</centered>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxListBox" name="ERRORS">
+          <content/>
+          <style>wxLB_SINGLE|wxLB_HSCROLL|wxLB_NEEDED_SB</style>
+        </object>
+        <option>1</option>
+        <flag>wxTOP|wxLEFT|wxRIGHT|wxEXPAND</flag>
+        <border>3</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxButton" name="wxID_OK">
+          <label>Close</label>
+        </object>
+        <flag>wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND</flag>
+        <border>3</border>
+      </object>
+    </object>
+    <size>400,500</size>
+    <style>wxDEFAULT_DIALOG_STYLE|wxTHICK_FRAME</style>
+  </object>
+  <object class="wxDialog" name="POSITION_DLG">
+    <title>Element position</title>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>x:</label>
+            </object>
+            <option>0</option>
+            <flag>wxRIGHT</flag>
+            <border>5</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="POSITION_X">
+              <style>wxTE_PROCESS_ENTER</style>
+            </object>
+            <option>1</option>
+            <flag>wxRIGHT</flag>
+            <border>5</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>y:</label>
+            </object>
+            <option>0</option>
+            <flag>wxLEFT|wxRIGHT</flag>
+            <border>5</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="POSITION_Y">
+              <style>wxTE_PROCESS_ENTER</style>
+            </object>
+            <option>1</option>
+          </object>
+        </object>
+        <option>1</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+    </object>
+    <style></style>
+  </object>
+  <object class="wxDialog" name="RENAME_DLG">
+    <title>Rename</title>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>New name:</label>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="NEWNAME">
+              <size>230, -1</size>
+              <style>wxTE_NOHIDESEL</style>
+              <focused>1</focused>
+            </object>
+            <option>1</option>
+            <flag>wxLEFT|wxEXPAND</flag>
+            <border>20</border>
+            <minsize></minsize>
+          </object>
+        </object>
+        <option>1</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>10</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStdDialogButtonSizer">
+          <object class="button">
+            <object class="wxButton" name="wxID_OK">
+              <label></label>
+              <label>&amp;Ok</label>
+              <default>1</default>
+            </object>
+          </object>
+          <object class="button">
+            <object class="wxButton" name="wxID_CANCEL">
+              <label></label>
+              <label>&amp;Cancel</label>
+            </object>
+          </object>
+        </object>
+        <option>1</option>
+        <flag>wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND</flag>
+        <border>10</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="EMPTY_PROPS"/>
+  <object class="wxPanel" name="LOCATION_PROPS">
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Description</label>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="COMMENT">
+              <style>wxTE_AUTO_SCROLL|wxTE_PROCESS_ENTER|wxTE_PROCESS_TAB|wxTE_MULTILINE|wxTE_WORDWRAP</style>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>3</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Dimensions</label>
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Width</label>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>20</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSpinCtrl" name="WIDTH">
+              <value>1024</value>
+              <min>1024</min>
+              <max>4096</max>
+              <style>wxSP_ARROW_KEYS</style>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Height</label>
+            </object>
+            <flag>wxLEFT|wxRIGHT</flag>
+            <border>20</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSpinCtrl" name="HEIGHT">
+              <value>768</value>
+              <min>768</min>
+              <max>3072</max>
+              <style>wxSP_ARROW_KEYS</style>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+          </object>
+          <object class="spacer">
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <flag>wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <object class="spacer">
+        <option>1</option>
+        <flag>wxEXPAND</flag>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="STATICIMAGE_PROPS">
+    <object class="wxStaticBoxSizer">
+      <label>Static image properties</label>
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxCheckBox" name="IS_COMPRESSED">
+          <label>Use texture compression</label>
+        </object>
+        <flag>wxALL</flag>
+        <border>5</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="LAYER_PROPS">
+    <object class="wxStaticBoxSizer">
+      <label>Parallax</label>
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxFlexGridSizer">
+          <cols>2</cols>
+          <rows>2</rows>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Horizontal</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <orient>wxVERTICAL</orient>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxHORIZONTAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxStaticText">
+                      <label>still</label>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND|wxALIGN_LEFT</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxStaticText">
+                      <label>1x</label>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND|wxALIGN_CENTRE</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxStaticText">
+                      <label>2x</label>
+                    </object>
+                    <option>0</option>
+                    <flag>wxEXPAND|wxALIGN_RIGHT</flag>
+                  </object>
+                </object>
+                <option>1</option>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxSlider" name="HORIZONTAL">
+                  <value>0</value>
+                  <min>-1000</min>
+                  <max>1000</max>
+                  <style>wxSL_AUTOTICKS</style>
+                  <tickfreq>100</tickfreq>
+                </object>
+                <option>1</option>
+                <flag>wxEXPAND</flag>
+              </object>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Vertical</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <orient>wxVERTICAL</orient>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxHORIZONTAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxStaticText">
+                      <label>still</label>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND|wxALIGN_LEFT</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxStaticText">
+                      <label>1x</label>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND|wxALIGN_CENTRE</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxStaticText">
+                      <label>2x</label>
+                    </object>
+                    <option>0</option>
+                    <flag>wxEXPAND|wxALIGN_RIGHT</flag>
+                  </object>
+                </object>
+                <option>1</option>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxSlider" name="VERTICAL">
+                  <value>0</value>
+                  <min>-1000</min>
+                  <max>1000</max>
+                  <style>wxSL_AUTOTICKS</style>
+                  <tickfreq>100</tickfreq>
+                </object>
+                <option>1</option>
+                <flag>wxEXPAND</flag>
+              </object>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+          </object>
+          <growablecols>1</growablecols>
+        </object>
+        <option>0</option>
+        <flag>wxEXPAND</flag>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="SEQUENCE_PROPS">
+    <object class="wxStaticBoxSizer">
+      <label>Sequence properties</label>
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Frames per second:</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSpinCtrl" name="FPS_SLIDER">
+              <value>15</value>
+              <min>1</min>
+              <max>50</max>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>30,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="LOOPED">
+              <label>Looped</label>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>30,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="REVERSED">
+              <label>Reversed</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>30,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="ONTIMER">
+              <label>Play on timer</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="PERIOD">
+              <value>3-5</value>
+              <enabled>0</enabled>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>10</border>
+          </object>
+          <object class="spacer">
+            <size>30,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBitmapButton" name="STOP">
+              <bitmap>stop.png</bitmap>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBitmapButton" name="PLAY">
+              <bitmap>play.png</bitmap>
+            </object>
+          </object>
+        </object>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticLine"/>
+        <flag>wxTOP|wxBOTTOM|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticBoxSizer">
+              <label>Image sequence</label>
+              <orient>wxHORIZONTAL</orient>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="SEQUENCE">
+                  <size>-1,55</size>
+                  <style>wxTE_MULTILINE</style>
+                  <font>
+                    <size>9</size>
+                    <family>modern</family>
+                    <style>normal</style>
+                    <weight>normal</weight>
+                    <underlined>0</underlined>
+                  </font>
+                </object>
+                <option>1</option>
+                <flag>wxALL|wxEXPAND</flag>
+                <border>1</border>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="APPLY">
+                  <label>Apply</label>
+                  <bg>#FF8080</bg>
+                </object>
+                <flag>wxEXPAND</flag>
+              </object>
+            </object>
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+            <border>30</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <orient>wxVERTICAL</orient>
+              <object class="sizeritem">
+                <object class="wxCheckBox" name="IS_LARGE">
+                  <label>Optimize for large animation</label>
+                </object>
+                <flag>wxTOP</flag>
+                <border>10</border>
+              </object>
+              <object class="sizeritem">
+                <object class="wxCheckBox" name="IS_COMPRESSED">
+                  <label>Use texture compression</label>
+                </object>
+                <flag>wxTOP</flag>
+                <border>10</border>
+              </object>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>30</border>
+          </object>
+          <object class="spacer">
+            <size>30</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <orient>wxVERTICAL</orient>
+              <object class="sizeritem">
+                <object class="wxCheckBox" name="FLIP_VERTICAL">
+                  <label>Flip vertically</label>
+                </object>
+                <flag>wxTOP</flag>
+                <border>10</border>
+              </object>
+              <object class="sizeritem">
+                <object class="wxCheckBox" name="FLIP_HORIZONTAL">
+                  <label>Flip horizontally</label>
+                </object>
+                <flag>wxTOP</flag>
+                <border>10</border>
+              </object>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>30</border>
+          </object>
+          <object class="spacer">
+            <size>30</size>
+          </object>
+        </object>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="OBJECT_PROPS">
+    <object class="wxStaticBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxToggleButton" name="PIVOT_BTN">
+              <label>Move pivot</label>
+              <checked>0</checked>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="DROP_POINT">
+              <label>Create point at pivot position</label>
+            </object>
+            <flag>wxLEFT</flag>
+            <border>10</border>
+          </object>
+        </object>
+        <flag>wxALL</flag>
+        <border>5</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Initial animation:</label>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxComboBox" name="SEQUENCES">
+              <content/>
+              <selection>0</selection>
+              <style>wxCB_READONLY</style>
+            </object>
+            <option>1</option>
+            <flag>wxRIGHT|wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Base class:</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxComboBox" name="BASES">
+              <content>
+                <item>None</item>
+              </content>
+              <selection>0</selection>
+              <style>wxCB_READONLY</style>
+            </object>
+            <option>1</option>
+            <flag>wxRIGHT|wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="CONDITIONAL">
+              <label>Conditional object loading</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>0</option>
+        <flag>wxTOP|wxLEFT|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <label>Object properties</label>
+      <object class="sizeritem">
+        <object class="wxTextCtrl" name="COMMENT">
+          <value>Comment</value>
+          <style>wxTE_AUTO_SCROLL|wxTE_MULTILINE|wxTE_WORDWRAP</style>
+        </object>
+        <option>1</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="PROJECT_PROPS">
+    <object class="wxStaticBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Startup location:</label>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxComboBox" name="LOCATIONS">
+              <content/>
+              <selection>0</selection>
+              <style>wxCB_READONLY</style>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>0</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <label>Project properties</label>
+    </object>
+  </object>
+  <object class="wxPanel" name="REGION_PROPS">
+    <object class="wxStaticBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Region type:</label>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxComboBox" name="TYPES">
+              <content>
+                <item>Normal region</item>
+                <item>Z region</item>
+                <item>Block region</item>
+                <item>Floor region</item>
+                <item>Junction region</item>
+              </content>
+              <selection>0</selection>
+              <style>wxCB_READONLY</style>
+            </object>
+            <option>1</option>
+            <flag>wxRIGHT|wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Cursor animation:</label>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxComboBox" name="CURSOR">
+              <content>
+                <item>Normal</item>
+                <item>Active</item>
+                <item>Take</item>
+                <item>Apply</item>
+                <item>Ignore</item>
+              </content>
+              <selection>0</selection>
+              <style>wxCB_READONLY</style>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>0</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <label>Region properties</label>
+    </object>
+  </object>
+  <object class="wxPanel" name="PATH_PROPS">
+    <object class="wxStaticBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <label>Path properties</label>
+      <object class="sizeritem">
+        <object class="wxFlexGridSizer">
+          <cols>2</cols>
+          <rows>2</rows>
+          <vgap>10</vgap>
+          <hgap>10</hgap>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="AFFECT_POSITION">
+              <label>Path affects object position</label>
+              <checked>1</checked>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="RELATIVE_MOVE">
+              <label>Relative to current position</label>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="AFFECT_ROTATION">
+              <label>Path affects object rotation angle</label>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="RELATIVE_ROTATION">
+              <label>Relative to current angle</label>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="sizeritem">
+        <object class="wxButton" name="TEST">
+          <label>Test</label>
+        </object>
+        <flag>wxTOP</flag>
+        <border>10</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="KPOINT_PROPS">
+    <object class="wxStaticBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <label>Key point properties</label>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Path point index</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSpinCtrl" name="POINT_INDEX">
+              <value>0</value>
+              <min>0</min>
+              <max>0</max>
+              <size>60,-1</size>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>50</border>
+          </object>
+        </object>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Speed (pixels/sec)</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSlider" name="SPEED">
+              <value>100</value>
+              <min>0</min>
+              <max>300</max>
+              <style>wxSL_AUTOTICKS|wxSL_LABELS</style>
+              <tickfreq>50</tickfreq>
+            </object>
+          </object>
+        </object>
+        <flag>wxTOP</flag>
+        <border>15</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="SOUND_PROPS">
+    <object class="wxStaticBoxSizer">
+      <label>Sound properties</label>
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxBitmapButton" name="STOP">
+              <bitmap>stop.png</bitmap>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBitmapButton" name="PLAY">
+              <bitmap>play.png</bitmap>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="LOOPED">
+              <label>Looped</label>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>30</border>
+          </object>
+          <object class="spacer">
+            <size>30,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="PROLONGED">
+              <label>Play even after sequence stop</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>30</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="PLAY_WHEN_LOAD">
+              <label>Play when object loaded</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="FILENAME">
+              <size>200,-1</size>
+              <enabled>0</enabled>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>60</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="EDIT">
+              <label>Open in editor</label>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="RELOAD_BTN">
+              <label>Reload sound</label>
+              <bg>#FF8080</bg>
+            </object>
+            <flag>wxLEFT</flag>
+            <border>15</border>
+          </object>
+        </object>
+        <flag>wxTOP|wxBOTTOM|wxLEFT</flag>
+        <border>5</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Volume: </label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSlider" name="VOLUME">
+              <value>100</value>
+              <min></min>
+              <max>100</max>
+              <style>wxSL_VERTICAL|wxSL_AUTOTICKS|wxSL_LABELS|wxSL_INVERSE</style>
+              <tickfreq>10</tickfreq>
+            </object>
+            <flag>wxRIGHT</flag>
+            <border>60</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Pan: </label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSlider" name="PAN">
+              <value>0</value>
+              <min>-100</min>
+              <max>100</max>
+              <size>200,-1</size>
+              <style>wxSL_AUTOTICKS|wxSL_LABELS</style>
+              <tickfreq>10</tickfreq>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="PLAY_ALWAYS">
+              <label>Play when tree item unselected (editor only)</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>30</border>
+          </object>
+        </object>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+    </object>
+  </object>
+  <object class="wxPanel" name="SOUNDREF_PROPS">
+    <object class="wxStaticBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Attached sound:</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxComboBox" name="SOUNDS">
+              <content>
+                <item>None</item>
+              </content>
+              <selection>0</selection>
+              <style></style>
+            </object>
+            <option>1</option>
+            <flag>wxRIGHT|wxEXPAND|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Frame index:</label>
+            </object>
+            <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>15</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSpinCtrl" name="FRAME_INDEX">
+              <value>0</value>
+              <min>0</min>
+              <max>0</max>
+            </object>
+            <flag>wxRIGHT|</flag>
+            <border>50</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="PLAY_ALWAYS">
+              <label>Play when tree item unselected (editor only)</label>
+              <checked>0</checked>
+            </object>
+            <flag>wxLEFT|wxALIGN_CENTRE_VERTICAL</flag>
+            <border>30</border>
+          </object>
+          <object class="spacer">
+            <option>3</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>0</option>
+        <flag>wxTOP|wxLEFT|wxEXPAND</flag>
+        <border>5</border>
+      </object>
+      <label>Sound reference properties</label>
+    </object>
+  </object>
+</resource>
